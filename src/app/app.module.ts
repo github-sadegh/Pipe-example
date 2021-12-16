@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { UserPipe } from 'src/pipe/user.pipe';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+export const appRoutes: Routes = [
+  {
+    path:'',
+    component: AppComponent
+  }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
